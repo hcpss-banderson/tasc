@@ -5,7 +5,7 @@ A generic Tool for Assembling Source Code.
 ## About
 
 Sometimes you just need a generic tool to fetch source code from various 
-locations and assemble it in a way you specify. My goal for this projec is to
+locations and assemble it in a way you specify. My goal for this project is to
 create a simple reproducable method for assembling code so that your 
 development workflow and your deployment workflow can use the same method.
 
