@@ -24,6 +24,8 @@
 namespace HcpssBanderson\Provider;
 
 use Buzz\Message\Response;
+use Buzz\Client\Curl;
+use Buzz\Browser;
 
 /**
  * A provider for fetching and placeing projects from remote zip files.
@@ -48,7 +50,10 @@ class ZipProvider extends ProviderBase
     
     public function __construct()
     {
-        $this->browser = new \Buzz\Browser();
+        $curl = new Curl();
+        $curl->setTimeout(60);
+        
+        $this->browser = new Browser($curl);
     }
     
     /**
