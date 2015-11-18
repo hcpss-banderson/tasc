@@ -39,15 +39,6 @@ class ZipProvider extends ProviderBase
     /** @var \Buzz\Browser */
     private $browser;
     
-    /** @var string */
-    private $source;
-    
-    /** @var string */
-    private $destination;
-    
-    /** @var string */
-    private $rename;
-    
     public function __construct()
     {
         $curl = new Curl();
