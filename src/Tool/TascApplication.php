@@ -39,13 +39,6 @@ class TascApplication extends Application
 {
     use ContainerAwareTrait;
     
-    public function __construct($name, $version, $container)
-    {
-        $this->setContainer($container);
-        
-        parent::__construct($name, $version);
-    }
-    
     /**
      * {@inheritDoc}
      * 
