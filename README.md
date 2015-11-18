@@ -20,7 +20,7 @@ Clone this repository or download a release.
 The manifest describes your project. It contains references to all the source
 code you want to fetch and where you want it put. It also contains any patches
 you want to apply. The file contains an array of projects and an array of 
-patches. It is a single canonical description of your file
+patches. It is a single canonical description of your project.
 
 Here is an example:
 
