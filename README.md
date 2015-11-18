@@ -32,8 +32,15 @@ projects:
   # own providers by implementing the HcpssBanderson\Provider\ProviderInterface.
   - provider: git
     
-    # Where the progect is located
+    # Where the project is located. 
     source: "https://github.com/moodle/moodle.git"
+    # 
+    # You could also add your GitHub token like this for private repos:
+    source: "https://MYGITHUBTOKEN:x-oauth-basic@github.com/MyCompany/private.git"
+    # 
+    # Or even better, you can use Symfony's Dependency injection to define the
+    # token in your parameters.yml file (described later) and inject it here:
+    source: "https://%github.access_token%:x-oauth-basic@github.com/MyCompany/private.git"
     
     # The git provider accepts a tag or a branch.
     tag: v2.9.3
@@ -49,13 +56,6 @@ projects:
     # Clone this repo into directory called what? This is optional. In this 
     # example, Moodle would be cloned into PROJECT_ROOT/moodle/core.
     rename: core
-    
-    # If this is a private repo, you need an access token. Since this file 
-    # should be checked into your version control, you might want to refrain 
-    # from putting your actual token here. Instead you can put a placeholer
-    # like "%github.access_token%". If you define this value in your 
-    # parameters.yml file, the value will be replaced at runtime.
-    auth: "%github.access_token%"
     
   - provider: zip
     rename: essential

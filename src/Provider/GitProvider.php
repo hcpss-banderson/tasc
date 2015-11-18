@@ -84,10 +84,6 @@ class GitProvider extends ProviderBase
     {   
         $params = $this->resolveParams($params);
         $ds = DIRECTORY_SEPARATOR;
-        
-        if (!empty($params['auth'])) {
-            echo "\n\n{$params['auth']}\n\n";
-        }
 
         $tempLocation = vsprintf('%s%s%s', [
             sys_get_temp_dir(),
