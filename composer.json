@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php/php": ">=5.5.9",
+        "php": ">=5.5.9",
         "symfony/console": "~2.7",
         "symfony/yaml": "~2.7",
         "symfony/dependency-injection": "~2.7",
