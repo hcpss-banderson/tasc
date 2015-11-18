@@ -1,0 +1,24 @@
+{
+    "name": "hcpss-banderson/tasc",
+    "type": "library",
+    "description": "A generic tool for assembling source code.",
+    "license": "GPL-3",
+    "authors": [
+        {
+            "name": "Brendan Anderson",
+            "email": "brendan_anderson@hcpss.org"
+        }
+    ],
+    "require": {
+        "php/php": ">=5.5.9",
+        "symfony/console": "~2.7",
+        "symfony/yaml": "~2.7",
+        "symfony/dependency-injection": "~2.7",
+        "symfony/config": "~2.7",
+        "kriswallsmith/buzz": "~0.15",
+        "adambrett/shell-wrapper": "~0.6"        
+    },
+    "autoload": {
+        "psr-4": {"HcpssBanderson\\": "src/"}
+    }
+}

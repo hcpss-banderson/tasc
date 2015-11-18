@@ -1,0 +1,9 @@
+/vendor/
+.buildpath
+.project
+.settings/
+assembled/
+composer.lock
+manifest.yml
+parameters.yml
+patches/

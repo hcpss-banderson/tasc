@@ -1,0 +1,34 @@
+---
+
+# Service definitions
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+services:
+  provider_manager:
+    class: HcpssBanderson\Provider\ProviderManager
+  git_provider:
+    class: HcpssBanderson\Provider\GitProvider
+    tags:
+      - { name: provider, type: git }
+  zip_provider:
+    class: HcpssBanderson\Provider\ZipProvider
+    tags:
+      - { name: provider, type: zip }
+  patcher_manager:
+    class: HcpssBanderson\Patcher\PatcherManager
+  patch_patcher:
+    class: HcpssBanderson\Patcher\PatchPatcher
+    tags:
+      - { name: patcher, type: patch_file }
