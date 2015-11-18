@@ -27,6 +27,7 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use HcpssBanderson\Console\Command\AssembleCommand;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Our application class
@@ -38,6 +39,13 @@ use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 class TascApplication extends Application
 {
     use ContainerAwareTrait;
+    
+    public function __construct($name, $version, ContainerBuilder $container)
+    {
+        $this->setContainer($container);
+        
+        parent::__construct($name, $version);
+    }
     
     /**
      * {@inheritDoc}

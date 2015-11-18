@@ -40,6 +40,5 @@ $loader = new YamlFileLoader($container, new FileLocator(__DIR__));
 $loader->load('services.yml');
 $loader->load('parameters.yml');
 
-$application = new TascApplication('Tasc', '0.1.0');
-$application->setContainer($contaner);
+$application = new TascApplication('Tasc', '0.1.0', $container);
 $application->run();
