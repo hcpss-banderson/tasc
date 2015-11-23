@@ -66,7 +66,18 @@ class AssembleCommand extends Command
                 'Where to assemble the code.',
                 './'
             )
+            ->addOption(
+                'extra-parameters',
+                'p',
+                InputOption::VALUE_OPTIONAL,
+                'A JSON encoded string with extra parameters.'
+            )
         ;
+            
+        $usage = '--manifest=/var/www/manifest.yml ';
+        $usage .= "--extra-parameters='{\"github.access_token\": \"MyToken\"}'";
+            
+        $this->addUsage($usage);
     }
     
     /**
@@ -76,6 +87,18 @@ class AssembleCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        //Process extra params passed through the console
+        $extraParamsJson    = $input->getOption('extra-parameters');
+        if ($extraParamsJson) {
+            echo "Extra parameters $extraParamsJson\n";
+            $extraParams = json_decode($extraParamsJson);
+            
+            foreach ($extraParams as $param => $value) {
+                echo "Setting param $param to $value\n";
+                $this->container->setParameter($param, $value);
+            }
+        }
+        
         // Get the manifest parameter
         $manifestPath   = realpath($input->getOption('manifest'));
         $rawManifest    = Yaml::parse($manifestPath);
@@ -88,7 +111,7 @@ class AssembleCommand extends Command
         
         // Now we can get manifest with replacement values replaced
         $manifest = $this->container->getParameter('manifest');
-        
+        print_r($manifest);
         $destination = realpath($input->getOption('destination'));
         
         // Assemble the code
