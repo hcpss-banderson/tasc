@@ -100,6 +100,12 @@ parameters:
 $ php /path/to/tasc.php --manifest=/my/manifest.yml --destination=/var/www
 ```
 
+You can also set parameters at runtime:
+
+```
+$ tasc --extra-parameters='{"github.access_token": "MyToken"}'
+```
+
 ## Dependencies
 
 PHP 5.5.9 or higher and [Composer](https://getcomposer.org/)
