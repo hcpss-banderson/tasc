@@ -15,6 +15,12 @@ development workflow and your deployment workflow can use the same method.
 
 Clone this repository or download a release.
 
+### Get the Dependencies
+
+```
+$ composer install
+```
+
 ### Create a Manifest
 
 The manifest describes your project. It contains references to all the source
@@ -96,7 +102,7 @@ $ php /path/to/tasc.php --manifest=/my/manifest.yml --destination=/var/www
 
 ## Dependencies
 
-PHP 5.5.9 or higher
+PHP 5.5.9 or higher and [Composer](https://getcomposer.org/)
 
 ## License
 
